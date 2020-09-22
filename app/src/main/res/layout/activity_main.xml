@@ -149,6 +149,8 @@
 
             </LinearLayout>
 
+
+
             <LinearLayout
                 android:id="@+id/layoutMedications"
                 android:layout_width="0dp"
