@@ -1,0 +1,97 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.medalert"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+8-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission
+11-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:5:5-6:38
+12        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+12-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:5:22-78
+13        android:maxSdkVersion="18" />
+13-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:6:9-35
+14    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+14-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:7:5-80
+14-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:7:22-77
+15
+16    <uses-feature
+16-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:9:5-10:36
+17        android:name="android.hardware.camera"
+17-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:9:19-57
+18        android:required="false" />
+18-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:10:9-33
+19
+20    <application
+20-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:12:5-41:19
+21        android:allowBackup="true"
+21-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:13:9-35
+22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+22-->[androidx.core:core:1.3.1] C:\Users\Connor\.gradle\caches\transforms-2\files-2.1\21d47dff16ccbe3d5a08083de58452c6\core-1.3.1\AndroidManifest.xml:24:18-86
+23        android:debuggable="true"
+24        android:icon="@mipmap/ic_launcher"
+24-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:14:9-43
+25        android:label="@string/app_name"
+25-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:15:9-41
+26        android:roundIcon="@mipmap/ic_launcher_round"
+26-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:16:9-54
+27        android:supportsRtl="true"
+27-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:17:9-35
+28        android:testOnly="true"
+29        android:theme="@style/AppTheme" >
+29-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:18:9-40
+30        <activity android:name="com.example.medalert.AddMedicationActivity" />
+30-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:19:9-68
+30-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:19:19-56
+31        <activity android:name="com.example.medalert.AlertsActivity" />
+31-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:20:9-52
+31-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:20:19-49
+32        <activity android:name="com.example.medalert.StatsActivity" />
+32-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:21:9-51
+32-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:21:19-48
+33        <activity android:name="com.example.medalert.MedicationsActivity" />
+33-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:22:9-57
+33-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:22:19-54
+34        <activity android:name="com.example.medalert.CalendarActivity" />
+34-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:23:9-54
+34-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:23:19-51
+35        <activity android:name="com.example.medalert.MainActivity" >
+35-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:24:9-30:20
+35-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:24:19-47
+36            <intent-filter>
+36-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:25:13-29:29
+37                <action android:name="android.intent.action.MAIN" />
+37-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:26:17-69
+37-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:26:25-66
+38
+39                <category android:name="android.intent.category.LAUNCHER" />
+39-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:28:17-77
+39-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:28:27-74
+40            </intent-filter>
+41        </activity>
+42
+43        <provider
+43-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:31:9-39:20
+44            android:name="androidx.core.content.FileProvider"
+44-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:32:13-62
+45            android:authorities="com.example.android.fileprovider"
+45-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:33:13-67
+46            android:exported="false"
+46-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:34:13-37
+47            android:grantUriPermissions="true" >
+47-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:35:13-47
+48            <meta-data
+48-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:36:13-38:64
+49                android:name="android.support.FILE_PROVIDER_PATHS"
+49-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:37:17-67
+50                android:resource="@xml/file_paths" />
+50-->C:\Users\Connor\AndroidStudioProjects\MedAlert\app\src\main\AndroidManifest.xml:38:17-51
+51        </provider>
+52    </application>
+53
+54</manifest>

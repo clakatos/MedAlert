@@ -9,4 +9,68 @@
     <string name="Home">Home</string>
     <string name="Profile">Profile</string>
     <string name="settings">Settings</string>
+    <string name="medications">Medications</string>
+
+    <string-array name="dosage_array">
+        <item>pill(s)</item>
+        <item>mg</item>
+        <item>mL</item>
+    </string-array>
+
+    <string-array name="medications_array">
+        <item>Acetaminophen</item>
+        <item>Adderall</item>
+        <item>Amitriptyline</item>
+        <item>Amlodipine</item>
+        <item>Amoxicillin</item>
+        <item>Ativan</item>
+        <item>Atorvastatin</item>
+        <item>Azithromycin</item>
+        <item>Benzonatate</item>
+        <item>Brilinta</item>
+        <item>Cephalexin</item>
+        <item>Ciprofloxacin</item>
+        <item>Citalopram</item>
+        <item>Clindamycin</item>
+        <item>Clonazepam</item>
+        <item>Cyclobenzaprine</item>
+        <item>Cymbalta</item>
+        <item>Doxycycline</item>
+        <item>Dupixent</item>
+        <item>Entresto</item>
+        <item>Entyvio</item>
+        <item>Farxiga</item>
+        <item>Gabapentin</item>
+        <item>Gilenya</item>
+        <item>Humira</item>
+        <item>Hydrochlorothiazide</item>
+        <item>Ibuprofen</item>
+        <item>Imbruvica</item>
+        <item>Invokana</item>
+        <item>Januvia</item>
+        <item>Jardiance</item>
+        <item>Kevzara</item>
+        <item>Lexapro</item>
+        <item>Lisinopril</item>
+        <item>Loratadine</item>
+        <item>Lyrica</item>
+        <item>Meloxicam</item>
+        <item>Metformin</item>
+        <item>Methadone</item>
+        <item>Metoprolol</item>
+        <item>Naproxen</item>
+        <item>Omeprazole</item>
+        <item>Onpattro</item>
+        <item>Otezla</item>
+        <item>Ozempic</item>
+        <item>Pantoprazole</item>
+        <item>Prednisone</item>
+        <item>Rybelsus</item>
+        <item>Tramadol</item>
+        <item>Trazodone</item>
+        <item>Viagra</item>
+        <item>Wellbutrin</item>
+        <item>Xanax</item>
+    </string-array>
+
 </resources>

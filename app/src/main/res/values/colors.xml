@@ -9,4 +9,5 @@
     <color name="colorStart">#383D3B</color>
     <color name="colorEnd">#537CDA</color>
     <color name="colorDivider">#383D3B</color>
+    <color name="colorOffWhite">#fbf9fa</color>
 </resources>
