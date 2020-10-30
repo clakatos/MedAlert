@@ -2,30 +2,22 @@ package com.example.medalert
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
-import android.graphics.Bitmap
-import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
-import android.os.Parcelable
 import android.provider.MediaStore
-import android.text.Layout
-import android.util.Log
 import android.widget.*
-import androidx.core.content.FileProvider
-import kotlinx.android.synthetic.main.activity_medications.*
+import androidx.appcompat.app.AppCompatActivity
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 class AddMedicationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_medication)
 
-        val medImage : LinearLayout = findViewById(R.id.medImage)
+        val medImage: LinearLayout = findViewById(R.id.medImage)
         medImage.setOnClickListener {
             dispatchTakePictureIntent()
         }
@@ -47,39 +39,42 @@ class AddMedicationActivity : AppCompatActivity() {
         /////////TEXT AUTOCOMPLETE FOR MEDICATIONS//////////////////////
 
         // Get a reference to the AutoCompleteTextView in the layout
-        val textView = findViewById(R.id.medNameEdit) as AutoCompleteTextView
+        val textView = findViewById<AutoCompleteTextView>(R.id.medNameEdit)
 // Get the string array
         val dosages: Array<out String> = resources.getStringArray(R.array.medications_array)
 // Create the adapter and set it to the AutoCompleteTextView
-        ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dosages).also { adapter ->
+        ArrayAdapter(this, android.R.layout.simple_list_item_1, dosages).also { adapter ->
             textView.setAdapter(adapter)
         }
 
         /////////////////////////////////////////////////////////////////
 
-        val saveIcon : ImageView = findViewById(R.id.addMedicationIcon)
+        val saveIcon: ImageView = findViewById(R.id.addMedicationIcon)
 
-        val medicationsList : ArrayList<MedicationsActivity.Medication> = intent.getSerializableExtra("MedList") as ArrayList<MedicationsActivity.Medication>
+        val medicationsList: ArrayList<MedicationsActivity.Medication> =
+                intent.getSerializableExtra("MedList") as ArrayList<MedicationsActivity.Medication>
 
         saveIcon.setOnClickListener {
-            val medicationName : EditText = findViewById(R.id.medNameEdit)
-            val dosage : EditText = findViewById(R.id.dosageEdit)
-            val dosageAmt : Spinner = findViewById(R.id.dosageSpinner)
-            val startDate : EditText = findViewById(R.id.startEdit)
-            val endDate : EditText = findViewById(R.id.endEdit)
-            val doctor : EditText = findViewById(R.id.doctorEdit)
-            val directions : EditText = findViewById(R.id.directionsEdit)
+            val medicationName: EditText = textView
+            val dosage: EditText = findViewById(R.id.dosageEdit)
+            val dosageAmt: Spinner = spinner
+            val startDate: EditText = findViewById(R.id.startEdit)
+            val endDate: EditText = findViewById(R.id.endEdit)
+            val doctor: EditText = findViewById(R.id.doctorEdit)
+            val directions: EditText = findViewById(R.id.directionsEdit)
 
             val intent = Intent(this, MedicationsActivity::class.java)
 
-            medicationsList.add(MedicationsActivity.Medication(
-                    medicationName.text.toString(),
-                    dosage.text.toString().toInt(),
-                    dosageAmt.selectedItem.toString(),
-                    startDate.text.toString(),
-                    endDate.text.toString(),
-                    doctor.text.toString(),
-                    directions.text.toString())
+            medicationsList.add(
+                    MedicationsActivity.Medication(
+                            medicationName.text.toString(),
+                            dosage.text.toString().toInt(),
+                            dosageAmt.selectedItem.toString(),
+                            startDate.text.toString(),
+                            endDate.text.toString(),
+                            doctor.text.toString(),
+                            directions.text.toString()
+                    )
             )
 
             intent.putExtra("medlist", medicationsList)
@@ -88,7 +83,7 @@ class AddMedicationActivity : AppCompatActivity() {
         }
     }
 
-     private fun getMedicationInfo(): Unit? {
+    private fun getMedicationInfo(): Unit? {
         return null
     }
 
