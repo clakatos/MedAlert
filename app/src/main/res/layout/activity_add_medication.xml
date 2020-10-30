@@ -92,7 +92,8 @@
                     android:layout_marginEnd="25dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="Medication Name" />
+                    android:hint="Medication Name"
+                    />
 
                 <EditText
                     android:id="@+id/dosageEdit"

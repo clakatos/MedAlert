@@ -3,4 +3,41 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/white_rect_back">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="75dp"
+            android:id="@+id/medIcon"
+            android:src="@drawable/currentmeds_icon"/>
+
+        <TextView
+            android:id="@+id/medName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="5dp"
+            android:text="Medication Name"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:layout_marginLeft="100dp" />
+
+        <TextView
+            android:id="@+id/details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="30dp"
+            android:text="Details"
+            android:textColor="@color/colorAccent"
+            android:textStyle="normal"
+            android:layout_marginLeft="100dp" />
+
+
+    </RelativeLayout>
+
 </LinearLayout>

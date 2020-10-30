@@ -7,14 +7,18 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
+import android.os.Parcelable
 import android.provider.MediaStore
+import android.text.Layout
 import android.util.Log
 import android.widget.*
 import androidx.core.content.FileProvider
+import kotlinx.android.synthetic.main.activity_medications.*
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 class AddMedicationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,22 +42,24 @@ class AddMedicationActivity : AppCompatActivity() {
             // Apply the adapter to the spinner
             spinner.adapter = adapter
         }
-        //////////////////////////////
+        /////////////////////////////////
 
         /////////TEXT AUTOCOMPLETE FOR MEDICATIONS//////////////////////
 
         // Get a reference to the AutoCompleteTextView in the layout
         val textView = findViewById(R.id.medNameEdit) as AutoCompleteTextView
 // Get the string array
-        val countries: Array<out String> = resources.getStringArray(R.array.medications_array)
+        val dosages: Array<out String> = resources.getStringArray(R.array.medications_array)
 // Create the adapter and set it to the AutoCompleteTextView
-        ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, countries).also { adapter ->
+        ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dosages).also { adapter ->
             textView.setAdapter(adapter)
         }
 
         /////////////////////////////////////////////////////////////////
 
         val saveIcon : ImageView = findViewById(R.id.addMedicationIcon)
+
+        val medicationsList : ArrayList<MedicationsActivity.Medication> = intent.getSerializableExtra("MedList") as ArrayList<MedicationsActivity.Medication>
 
         saveIcon.setOnClickListener {
             val medicationName : EditText = findViewById(R.id.medNameEdit)
@@ -64,18 +70,26 @@ class AddMedicationActivity : AppCompatActivity() {
             val doctor : EditText = findViewById(R.id.doctorEdit)
             val directions : EditText = findViewById(R.id.directionsEdit)
 
-//            Log.d("INFO", medicationName.text.toString())
-//            Log.d("INFO", dosage.text.toString())
-//            Log.d("INFO", dosageAmt.selectedItem.toString())
-
             val intent = Intent(this, MedicationsActivity::class.java)
+
+            medicationsList.add(MedicationsActivity.Medication(
+                    medicationName.text.toString(),
+                    dosage.text.toString().toInt(),
+                    dosageAmt.selectedItem.toString(),
+                    startDate.text.toString(),
+                    endDate.text.toString(),
+                    doctor.text.toString(),
+                    directions.text.toString())
+            )
+
+            intent.putExtra("medlist", medicationsList)
 
             startActivity(intent)
         }
     }
 
-     private fun getMedicationInfo() {
-
+     private fun getMedicationInfo(): Unit? {
+        return null
     }
 
     val REQUEST_IMAGE_CAPTURE = 1
@@ -106,6 +120,15 @@ class AddMedicationActivity : AppCompatActivity() {
             currentPhotoPath = absolutePath
         }
     }
+
+//    data class Medication (val medName : String, val dosage : Int, val dosageMsmt : String, val startDate : String, val endDate : String, val doctor : String, val directions : String){
+//
+//    }
+
+    private fun getMedication() {
+
+    }
+
 
 //    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 //        super.onActivityResult(requestCode, resultCode, data)

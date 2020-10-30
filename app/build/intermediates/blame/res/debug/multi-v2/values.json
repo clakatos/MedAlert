@@ -6,12 +6,9 @@
                 {
                     "source": "C:\\Users\\Connor\\AndroidStudioProjects\\MedAlert\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
-                        "startLines": "-1,19,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
-                        "startColumns": "-1,4,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
-                        "startOffsets": "-1,683,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
-                        "endLines": "-1,73,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
-                        "endColumns": "-1,19,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
-                        "endOffsets": "-1,2452,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1"
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1"
                     },
                     "to": {
                         "startLines": "2,7,978,979,1007,1008,1011,1023,1024,1059,1065,1067,1069",
@@ -99,6 +96,25 @@
                         "endLines": "1088",
                         "endColumns": "12",
                         "endOffsets": "66954"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Connor\\AndroidStudioProjects\\MedAlert\\app\\src\\main\\res\\values\\attrs_medication_element.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "17",
+                        "endLines": "6",
+                        "endColumns": "24",
+                        "endOffsets": "322"
+                    },
+                    "to": {
+                        "startLines": "6071",
+                        "startColumns": "4",
+                        "startOffsets": "354535",
+                        "endLines": "6076",
+                        "endColumns": "24",
+                        "endOffsets": "354831"
                     }
                 },
                 {

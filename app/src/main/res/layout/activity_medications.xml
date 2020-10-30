@@ -53,71 +53,46 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/medListElement">
+            android:layout_height="wrap_content">
 
             <LinearLayout
-                android:id="@+id/medListInfo1"
-                android:layout_width="302dp"
-                android:layout_height="80dp"
-                android:layout_marginTop="22dp"
+                android:id="@+id/medListInfo"
+                android:layout_marginStart="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginEnd="15dp"
-                android:background="@drawable/offwhite_rect_back"
-                android:gravity="center"
-                android:orientation="vertical"
+                android:background="@drawable/white_rect_back"
                 android:padding="15dp"
                 app:layout_constraintDimensionRatio="H,1:1"
-                app:layout_constraintStart_toEndOf="@id/medListImage1"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:elevation="4dp">
-
-                <TextView
-                    android:id="@+id/medNameText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Medication Name"
-                    android:textColor="@color/colorAccent">
-
-                </TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="sdfds">
-
-                </TextView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/medListImage1"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="22dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginEnd="15dp"
-                android:background="@drawable/med_list_image_rect"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="15dp"
-                app:layout_constraintDimensionRatio="H,1:1"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
                 android:elevation="4dp">
 
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/currentmeds_icon">
-
-                </ImageView>
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content" 
+                    android:layout_gravity="start"
+                    android:src="@drawable/currentmeds_icon"/>
+                
+                <TextView
+                    android:id="@+id/medName1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Medication Name"
+                    android:textColor="@color/colorAccent"
+                    android:gravity="center"
+                    />
 
             </LinearLayout>
 
+            <ListView
+                android:id="@+id/medication_listview"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:layout_constraintTop_toBottomOf="@id/medListInfo"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -344,6 +344,10 @@ attr errorIconTint
 attr errorIconTintMode
 attr errorTextAppearance
 attr errorTextColor
+attr exampleColor
+attr exampleDimension
+attr exampleDrawable
+attr exampleString
 attr expandActivityOverflowButtonDrawable
 attr expanded
 attr expandedTitleGravity
@@ -1666,6 +1670,7 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id details
 id dialog_button
 id dimensions
 id direct
@@ -1745,13 +1750,14 @@ id linear
 id listMode
 id list_item
 id masked
+id medIcon
 id medImage
 id medInfoForm
-id medListElement
-id medListImage1
-id medListInfo1
+id medListInfo
+id medName
+id medName1
 id medNameEdit
-id medNameText
+id medication_listview
 id medicationsHeader
 id message
 id middle
@@ -2009,6 +2015,8 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout medication_element
+layout medications_listview
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title
@@ -2900,6 +2908,7 @@ styleable MaterialRadioButton useMaterialThemeColors
 styleable MaterialShape shapeAppearance shapeAppearanceOverlay
 styleable MaterialTextAppearance android_lineHeight lineHeight
 styleable MaterialTextView android_textAppearance android_lineHeight lineHeight
+styleable MedicationElement exampleColor exampleDimension exampleDrawable exampleString
 styleable MenuGroup android_enabled android_id android_visible android_menuCategory android_orderInCategory android_checkableBehavior
 styleable MenuItem android_icon android_enabled android_id android_checked android_visible android_menuCategory android_orderInCategory android_title android_titleCondensed android_alphabeticShortcut android_numericShortcut android_checkable android_onClick actionLayout actionProviderClass actionViewClass alphabeticModifiers contentDescription iconTint iconTintMode numericModifiers showAsAction tooltipText
 styleable MenuView android_windowAnimationStyle android_itemTextAppearance android_horizontalDivider android_verticalDivider android_headerBackground android_itemBackground android_itemIconDisabledAlpha preserveIconSpacing subMenuArrow
