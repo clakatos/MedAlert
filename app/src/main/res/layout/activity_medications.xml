@@ -52,49 +52,92 @@
         app:layout_constraintTop_toBottomOf="@id/medicationsHeader">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/medItem1"
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:background="@drawable/white_rect_back"
+            android:layout_marginTop="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="10dp">
 
-            <LinearLayout
-                android:id="@+id/medListInfo"
-                android:layout_marginStart="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginEnd="15dp"
-                android:background="@drawable/white_rect_back"
-                android:padding="15dp"
-                app:layout_constraintDimensionRatio="H,1:1"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+
+            <ImageView
+                android:id="@+id/medIcon1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/currentmeds_icon"
                 app:layout_constraintStart_toStartOf="parent"
-                android:elevation="4dp">
+                app:layout_constraintTop_toBottomOf="@id/medicationsHeader"
+                tools:ignore="NotSibling"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp">
 
-                <ImageView
-                    android:layout_width="75dp"
-                    android:layout_height="wrap_content" 
-                    android:layout_gravity="start"
-                    android:src="@drawable/currentmeds_icon"/>
-                
-                <TextView
-                    android:id="@+id/medName1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:text="Medication Name"
-                    android:textColor="@color/colorAccent"
-                    android:gravity="center"
-                    />
+            </ImageView>
 
-            </LinearLayout>
+            <TextView
+                android:id="@+id/medName1"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="Medication Name"
+                app:layout_constraintStart_toEndOf="@id/medIcon1"
+                android:layout_marginTop="10dp">
 
-            <ListView
-                android:id="@+id/medication_listview"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                app:layout_constraintTop_toBottomOf="@id/medListInfo"/>
+            </TextView>
+
+            <TextView
+                android:id="@+id/dosageText1"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="Dosage"
+                app:layout_constraintStart_toEndOf="@id/medIcon1"
+                app:layout_constraintTop_toBottomOf="@id/medName1"
+                android:layout_marginTop="5dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/dosageAmountText1"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="Dosage Amt"
+                app:layout_constraintStart_toEndOf="@id/dosageText1"
+                app:layout_constraintTop_toBottomOf="@id/medName1"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/startDateText1"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="Start Date"
+                app:layout_constraintStart_toEndOf="@id/medIcon1"
+                app:layout_constraintTop_toBottomOf="@id/dosageText1"
+                android:layout_marginTop="5dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/endDateText1"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="End Date"
+                app:layout_constraintStart_toEndOf="@id/startDateText1"
+                app:layout_constraintTop_toBottomOf="@id/dosageText1"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp">
+
+            </TextView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </ScrollView>
 

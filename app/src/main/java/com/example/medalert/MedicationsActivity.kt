@@ -34,6 +34,18 @@ class MedicationsActivity : AppCompatActivity() {
             if (medicationsList.isNotEmpty()) {
                 val medNameText: TextView = findViewById(R.id.medName1)
                 medNameText.text = medicationsList[0].medName
+
+                val dosageText : TextView = findViewById(R.id.dosageText1)
+                dosageText.text = medicationsList[0].dosage.toString()
+
+                val dosageAmountText : TextView = findViewById(R.id.dosageAmountText1)
+                dosageAmountText.text = medicationsList[0].dosageMsmt
+
+                val startDate : TextView = findViewById(R.id.startDateText1)
+                startDate.text = medicationsList[0].startDate
+
+                val endDate : TextView = findViewById(R.id.endDateText1)
+                endDate.text = medicationsList[0].endDate
             }
         }
     }
