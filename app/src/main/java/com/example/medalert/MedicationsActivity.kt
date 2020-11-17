@@ -2,9 +2,11 @@ package com.example.medalert
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
 import java.io.Serializable
 
 class MedicationsActivity : AppCompatActivity() {
@@ -17,6 +19,12 @@ class MedicationsActivity : AppCompatActivity() {
             openAddMedicationActivity()
         }
         generateMedicationsList()
+
+        val back_icon : ImageView = findViewById(R.id.backArrow)
+        back_icon.setOnClickListener() {
+            openHome()
+        }
+
     }
 
     private var medicationsList: List<Medication>? = ArrayList()
@@ -52,6 +60,12 @@ class MedicationsActivity : AppCompatActivity() {
 
     private fun openAddMedicationActivity() {
         val intent = Intent(this, AddMedicationActivity::class.java)
+        intent.putExtra("MedList", medicationsList as ArrayList<Medication>)
+        startActivity(intent)
+    }
+
+    private fun openHome() {
+        val intent = Intent(this, MainActivity::class.java)
         intent.putExtra("MedList", medicationsList as ArrayList<Medication>)
         startActivity(intent)
     }

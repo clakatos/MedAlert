@@ -116,13 +116,6 @@ class AddMedicationActivity : AppCompatActivity() {
         }
     }
 
-//    data class Medication (val medName : String, val dosage : Int, val dosageMsmt : String, val startDate : String, val endDate : String, val doctor : String, val directions : String){
-//
-//    }
-
-    private fun getMedication() {
-
-    }
 
 
 //    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
