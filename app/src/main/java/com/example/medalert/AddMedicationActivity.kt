@@ -8,6 +8,7 @@ import android.provider.MediaStore
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import java.io.File
+import java.io.FileWriter
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
@@ -19,7 +20,7 @@ class AddMedicationActivity : AppCompatActivity() {
 
         val medImage: LinearLayout = findViewById(R.id.medImage)
         medImage.setOnClickListener {
-            dispatchTakePictureIntent()
+            //dispatchTakePictureIntent()
         }
 
         ////////DOSAGE SPINNER////////////
@@ -40,9 +41,9 @@ class AddMedicationActivity : AppCompatActivity() {
 
         // Get a reference to the AutoCompleteTextView in the layout
         val textView = findViewById<AutoCompleteTextView>(R.id.medNameEdit)
-// Get the string array
+        // Get the string array
         val dosages: Array<out String> = resources.getStringArray(R.array.medications_array)
-// Create the adapter and set it to the AutoCompleteTextView
+        // Create the adapter and set it to the AutoCompleteTextView
         ArrayAdapter(this, android.R.layout.simple_list_item_1, dosages).also { adapter ->
             textView.setAdapter(adapter)
         }
@@ -50,9 +51,6 @@ class AddMedicationActivity : AppCompatActivity() {
         /////////////////////////////////////////////////////////////////
 
         val saveIcon: ImageView = findViewById(R.id.addMedicationIcon)
-
-        val medicationsList: ArrayList<MedicationsActivity.Medication> =
-                intent.getSerializableExtra("MedList") as ArrayList<MedicationsActivity.Medication>
 
         saveIcon.setOnClickListener {
             val medicationName: EditText = textView
@@ -63,68 +61,39 @@ class AddMedicationActivity : AppCompatActivity() {
             val doctor: EditText = findViewById(R.id.doctorEdit)
             val directions: EditText = findViewById(R.id.directionsEdit)
 
+            var fileName = "medList.txt"
+            var fileWrite : FileWriter
+            var file : File = File("sdcard/Documents/${fileName}")
+
+
+            if (File("sdcard/Documents/${fileName}").exists()) {
+
+                file.appendText(medicationName.text.toString() + "\n")
+                file.appendText(dosage.text.toString() + "\n")
+                file.appendText(dosageAmt.selectedItem.toString() + "\n")
+                file.appendText(startDate.text.toString() + "\n")
+                file.appendText(endDate.text.toString() + "\n")
+                file.appendText(doctor.text.toString() + "\n")
+                file.appendText(directions.text.toString() + "\n")
+
+            } else {
+
+                fileWrite = FileWriter(File("sdcard/Documents/${fileName}"))
+
+                fileWrite.write(medicationName.text.toString() + "\n")
+                fileWrite.write(dosage.text.toString() + "\n")
+                fileWrite.write(dosageAmt.selectedItem.toString() + "\n")
+                fileWrite.write(startDate.text.toString() + "\n")
+                fileWrite.write(endDate.text.toString() + "\n")
+                fileWrite.write(doctor.text.toString() + "\n")
+                fileWrite.write(directions.text.toString() + "\n")
+
+                fileWrite.close()
+            }
+
             val intent = Intent(this, MedicationsActivity::class.java)
-
-            medicationsList.add(
-                    MedicationsActivity.Medication(
-                            medicationName.text.toString(),
-                            dosage.text.toString().toInt(),
-                            dosageAmt.selectedItem.toString(),
-                            startDate.text.toString(),
-                            endDate.text.toString(),
-                            doctor.text.toString(),
-                            directions.text.toString()
-                    )
-            )
-
-            intent.putExtra("medlist", medicationsList)
-
             startActivity(intent)
         }
     }
-
-    private fun getMedicationInfo(): Unit? {
-        return null
-    }
-
-    val REQUEST_IMAGE_CAPTURE = 1
-
-    private fun dispatchTakePictureIntent() {
-        val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        try {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
-        } catch (e: ActivityNotFoundException) {
-            // display error state to the user
-        }
-        //createImageFile()
-    }
-
-    lateinit var currentPhotoPath: String
-
-    @Throws(IOException::class)
-    private fun createImageFile(): File {
-        // Create an image file name
-        val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
-        val storageDir: File? = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-        return File.createTempFile(
-            "JPEG_${timeStamp}_", /* prefix */
-            ".jpg", /* suffix */
-            storageDir /* directory */
-        ).apply {
-            // Save a file: path for use with ACTION_VIEW intents
-            currentPhotoPath = absolutePath
-        }
-    }
-
-
-
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-//            val imageBitmap = data.extras.get("data") as Bitmap
-//            ImageView.setImageBitmap(imageBitmap)
-//        }
-//    }
-
 
 }
