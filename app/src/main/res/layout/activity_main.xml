@@ -76,20 +76,21 @@
             app:layout_constraintTop_toBottomOf="@id/profile_picture">
 
             <EditText
+                android:id="@+id/searchBarText"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:background="@null"
                 android:hint="@string/search_meds"
+                android:importantForAutofill="no"
                 android:inputType="text"
                 android:paddingStart="15dp"
                 android:paddingEnd="15dp"
                 android:textColor="@color/colorAccent"
-                android:textSize="16sp"
-                android:importantForAutofill="no"
-            />
+                android:textSize="16sp" />
 
             <ImageView
+                android:id="@+id/searchIcon"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/ic_baseline_search_24"

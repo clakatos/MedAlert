@@ -7,12 +7,9 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.LinearLayout
-import android.widget.TextView
-import androidx.core.app.NotificationCompat
+import android.widget.*
 import java.io.File
 
 
@@ -91,6 +88,16 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        ///////////////WEBVIEW SEARCH/////////////////
+
+        val searchIcon : ImageView = findViewById(R.id.searchIcon)
+
+        searchIcon.setOnClickListener() {
+            val searchBarText : EditText = findViewById(R.id.searchBarText)
+            var searchTerm = searchBarText.text.toString()
+            Log.d("seatch", searchTerm)
+            openWebView(searchTerm)
+        }
 
     }
 
@@ -129,6 +136,12 @@ class MainActivity : AppCompatActivity() {
                 getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
         }
+    }
+
+    private fun openWebView(searchTerm: String) {
+        val intent = Intent(this, WebviewActivity::class.java)
+        intent.putExtra("SearchTerm", searchTerm)
+        startActivity(intent)
     }
 
 
